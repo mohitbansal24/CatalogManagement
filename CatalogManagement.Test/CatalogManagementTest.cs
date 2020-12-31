@@ -21,7 +21,7 @@ namespace CatalogManagement.Test
             var output = CatalogManager.CreateMasterCatalog(catalogA, catalogB);
 
             //Assert
-            Assert.IsTrue(output.Count == 10);
+            Assert.IsTrue(output.Count == (catalogA.Count + catalogB.Count));
         }
 
         [TestMethod]
@@ -36,7 +36,7 @@ namespace CatalogManagement.Test
             var output = CatalogManager.CreateMasterCatalog(catalogA, catalogB);
 
             //Assert
-            Assert.IsFalse(output.Count == 10);
+            Assert.IsFalse(output.Count == (catalogA.Count + catalogB.Count - 1));
         }
 
         [TestMethod]
